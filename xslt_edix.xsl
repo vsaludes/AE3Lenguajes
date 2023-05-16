@@ -14,7 +14,13 @@
             <link rel="stylesheet" href="css/estilos.css" />
         </head>
         <body>
-            <h1><xsl:value-of select="/ite/empresa"/></h1>
+            <h1><xsl:value-of select="ite/empresa"/></h1>
+
+            <h2>Profesores</h2>
+
+            <xsl:for-each select="ite/profesores/profesor">
+                <p>Nombre: <xsl:value-of select="nombre" /></p>
+            </xsl:for-each>
         </body>
         </html>
         
