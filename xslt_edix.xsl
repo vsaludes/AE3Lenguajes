@@ -80,9 +80,13 @@
 
         <section>
             <h2>Contacto</h2>
+            <p>Información sin compromiso</p>
                 <form>
                     <label for="nombre">Nombre:  </label>
                     <input type="text" id="nombre" name="nombre" pattern="[A-Za-zñÑ]+" required="required" /><br />
+
+                    <label for="apellido">Apellido:  </label>
+                    <input type="text" id="apellido" name="apellido" pattern="[A-Za-zñÑ]+" required="required" /><br />
                     
                     <label for="telefono">Teléfono: </label>
                     <input type="tel" id="telefono" name="telefono" pattern="[0-9]*" minlength="9" maxlength="9" required="required" /><br />
