@@ -17,10 +17,22 @@
             <h1><xsl:value-of select="ite/empresa"/></h1>
 
             <h2>Profesores</h2>
-
-            <xsl:for-each select="ite/profesores/profesor">
-                <p>Nombre: <xsl:value-of select="nombre" /></p>
-            </xsl:for-each>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Nombre</th>
+                </tr>
+            </thead>
+            <tbody>
+               <xsl:for-each select="ite/profesores/profesor">
+               <tr>
+                    <td><xsl:value-of select="id"/></td>
+                    <td><xsl:value-of select="nombre"/></td>
+               </tr>
+               </xsl:for-each>
+            </tbody>
+        </table>
         </body>
         </html>
         
