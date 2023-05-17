@@ -1,9 +1,17 @@
 h1{
     text-align: center;
-    text-decoration: none;
-    color:rgb(66, 203, 35);
 }
 
+a:link,
+a:visited {
+    color: #000000;
+    text-decoration: none;
+}
+
+a:hover {
+    color:blue;
+    text-decoration: underline; 
+}
 
 table td {
     padding: 5px;
