@@ -9,12 +9,16 @@
 <!--Escribimos lo que queremos generar, en este caso HTML-->
         <html>
         <head>
-            <title>Edix</title>
+            <title><xsl:value-of select="ite/@nombre"/></title>
             <!--Añadimos el fichero CSS-->
             <link rel="stylesheet" href="css/estilos.css" />
         </head>
         <body>
-            <h1><xsl:value-of select="ite/empresa"/></h1>
+            <h1>
+                <a href="{ite/@web}">
+                <xsl:value-of select="ite/@nombre"/>
+                </a>
+            </h1>
 
             <h2>Profesores</h2>
         <table border="1">
