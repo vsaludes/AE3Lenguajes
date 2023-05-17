@@ -21,7 +21,7 @@
                 </a>
             </h1>
 
-            <h2>Profesores</h2>
+        <h2>Profesores</h2>
         <table border="1">
             <thead>
                 <tr>
@@ -37,9 +37,10 @@
                </tr>
                </xsl:for-each>
             </tbody>
+
         </table>
 
-            <h2>Ciclos</h2>
+        <h2>Ciclos</h2>
         <table border="1">
             <thead>
                 <tr>
@@ -60,6 +61,43 @@
                </xsl:for-each>
             </tbody>
         </table>
+
+        <section>
+          <h2>Director</h2>
+          <p>
+            Nombre: <xsl:value-of select="ite/director/nombre"/><br/>
+            Despacho: <xsl:value-of select="ite/director/despacho"/>
+          </p>
+        </section>
+
+        <section>
+          <h2>Jefe de Estudios</h2>
+          <p>
+            Nombre: <xsl:value-of select="ite/jefe_estudios/nombre"/><br/>
+            Despacho: <xsl:value-of select="ite/jefe_estudios/despacho"/>
+          </p>
+        </section>
+
+        <section>
+            <h2>Contacto</h2>
+                <form>
+                    <label for="nombre">Nombre:  </label>
+                    <input type="text" id="nombre" name="nombre" pattern="[A-Za-zñÑ]+" required="required" /><br />
+                    
+                    <label for="telefono">Teléfono: </label>
+                    <input type="tel" id="telefono" name="telefono" pattern="[0-9]*" minlength="9" maxlength="9" required="required" /><br />
+                    
+                    <label for="opciones">Ciclo:</label>
+                        <select id="opciones" name="opciones" required="required">
+                        <option value="asir">ASIR</option>
+                        <option value="daw">DAW</option>
+                        <option value="dam">DAM</option>
+                        <option value="no_lo_se">No lo sé</option>
+                        </select> <br />
+                    
+                    <input type="submit" value="Enviar" />
+                </form>
+        </section>
 
     <!--Pie de página que contiene una lista desordenada con la información de la empresa-->
         <footer>
