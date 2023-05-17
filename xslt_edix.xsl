@@ -33,6 +33,28 @@
                </xsl:for-each>
             </tbody>
         </table>
+
+            <h2>Ciclos</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Nombre</th>
+                    <th>Grado</th>
+                    <th>Decreto Título</th>
+                </tr>
+            </thead>
+            <tbody>
+               <xsl:for-each select="ite/ciclos/ciclo">
+               <tr>
+                    <td><xsl:value-of select="@id"/></td>
+                    <td><xsl:value-of select="nombre"/></td>
+                    <td><xsl:value-of select="grado"/></td>
+                    <td><xsl:value-of select="decretoTitulo/@año"/></td>
+               </tr>
+               </xsl:for-each>
+            </tbody>
+        </table>
         </body>
         </html>
         
