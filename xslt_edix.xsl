@@ -14,6 +14,7 @@
             <link rel="stylesheet" href="css/estilos.css" />
         </head>
         <body>
+            <!--Añadimos como hipervínculo la dirección web que contiene el atributo web al atributo nombre-->
             <h1>
                 <a href="{ite/@web}">
                 <xsl:value-of select="ite/@nombre"/>
@@ -59,6 +60,15 @@
                </xsl:for-each>
             </tbody>
         </table>
+
+    <!--Pie de página que contiene una lista desordenada con la información de la empresa-->
+        <footer>
+            <ul>
+                <li><xsl:value-of select="ite/empresa"/></li>
+                <li><xsl:value-of select="ite/telefono"/></li>
+                <li><a href="https://www.grupoproeduca.com/">Web grupo Proeduca</a></li>
+            </ul>
+        </footer>
         </body>
         </html>
         

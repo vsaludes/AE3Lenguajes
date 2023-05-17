@@ -1,4 +1,26 @@
-
 h1{
+    text-align: center;
+    text-decoration: none;
     color:rgb(66, 203, 35);
+}
+
+
+table td {
+    padding: 5px;
+    text-align: center;
+}
+
+footer{
+    text-align: center;
+    margin-top: 50px;
+}
+
+footer ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+footer li:first-child{
+    font-weight: bold;
+    font-size: 18px;
 }
