@@ -1,5 +1,30 @@
+body {
+    font-family: "Arial", sans-serif;
+    padding: 0px;
+    margin: 0px;
+    background-color: antiquewhite;
+  }
+
 h1{
     text-align: center;
+}
+
+#encabezado {
+    background-color: blueviolet;
+    padding: 40px;
+    margin: 0px;
+}
+
+#cuerpo {
+    margin-left: 10px;
+}
+
+#imagen {
+    float: right;
+    margin-right: 50px;
+    max-width: 20%;
+    max-height: 20%;
+          
 }
 
 a:link,
@@ -21,6 +46,7 @@ table td {
 footer{
     text-align: center;
     margin-top: 50px;
+    padding: 30px;
 }
 
 footer ul{
@@ -28,7 +54,35 @@ footer ul{
     padding: 0;
 }
 
+/*Utilizamos first-child para poner en negrita sólo la primera parte del footer*/
 footer li:first-child{
     font-weight: bold;
     font-size: 18px;
 }
+
+/* Estilos para tabletas */
+@media (max-width: 768px) {
+    #imagen {
+      float: none;
+      margin: 0 auto;
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  
+    #cuerpo {
+      margin: 0;
+    }
+  
+    table {
+      width: 100%;
+    }
+  }
+  
+  /* Estilos para dispositivos móviles */
+  @media (max-width: 480px) {
+    #encabezado {
+      padding: 20px;
+    }
+  }
+  
