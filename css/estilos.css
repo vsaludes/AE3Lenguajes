@@ -54,35 +54,3 @@ footer ul{
     padding: 0;
 }
 
-/*Utilizamos first-child para poner en negrita sólo la primera parte del footer*/
-footer li:first-child{
-    font-weight: bold;
-    font-size: 18px;
-}
-
-/* Estilos para tabletas */
-@media (max-width: 768px) {
-    #imagen {
-      float: none;
-      margin: 0 auto;
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-  
-    #cuerpo {
-      margin: 0;
-    }
-  
-    table {
-      width: 100%;
-    }
-  }
-  
-  /* Estilos para dispositivos móviles */
-  @media (max-width: 480px) {
-    #encabezado {
-      padding: 20px;
-    }
-  }
-  
