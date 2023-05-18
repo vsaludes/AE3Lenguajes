@@ -21,62 +21,71 @@
                 </a>
             </h1>
 
-        <h2>Profesores</h2>
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>id</th>
-                    <th>Nombre</th>
-                </tr>
-            </thead>
-            <tbody>
-               <xsl:for-each select="ite/profesores/profesor">
-               <tr>
-                    <td><xsl:value-of select="id"/></td>
-                    <td><xsl:value-of select="nombre"/></td>
-               </tr>
-               </xsl:for-each>
-            </tbody>
-
-        </table>
-
-        <h2>Ciclos</h2>
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>id</th>
-                    <th>Nombre</th>
-                    <th>Grado</th>
-                    <th>Decreto Título</th>
-                </tr>
-            </thead>
-            <tbody>
-               <xsl:for-each select="ite/ciclos/ciclo">
-               <tr>
-                    <td><xsl:value-of select="@id"/></td>
-                    <td><xsl:value-of select="nombre"/></td>
-                    <td><xsl:value-of select="grado"/></td>
-                    <td><xsl:value-of select="decretoTitulo/@año"/></td>
-               </tr>
-               </xsl:for-each>
-            </tbody>
-        </table>
-
-        <section>
-          <h2>Director</h2>
-          <p>
+        <h2>Personal docente</h2>
+        <!--Utilizamos las etiquetas details para introducir la información en desplegables-->
+        <details>
+        <summary>Director</summary>
+            <p>
             Nombre: <xsl:value-of select="ite/director/nombre"/><br/>
             Despacho: <xsl:value-of select="ite/director/despacho"/>
-          </p>
-        </section>
+            </p>
+        </details>
 
-        <section>
-          <h2>Jefe de Estudios</h2>
-          <p>
+        <details>
+        <summary>Jefe de Estudios</summary>
+            <p>
             Nombre: <xsl:value-of select="ite/jefe_estudios/nombre"/><br/>
             Despacho: <xsl:value-of select="ite/jefe_estudios/despacho"/>
-          </p>
-        </section>
+            </p>
+        </details>
+        
+        <details>
+        <summary>Profesores</summary>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Nombre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <xsl:for-each select="ite/profesores/profesor">
+                <tr>
+                        <td><xsl:value-of select="id"/></td>
+                        <td><xsl:value-of select="nombre"/></td>
+                </tr>
+                </xsl:for-each>
+                </tbody>
+            </table>
+        </details>
+        
+        <h2>Oferta educativa</h2>
+        <!--Utilizamos la etiqueta details para introducir la tabla en desplegable-->
+        <details>
+        <summary>Ciclos</summary>   
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Nombre</th>
+                        <th>Grado</th>
+                        <th>Decreto Título</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <xsl:for-each select="ite/ciclos/ciclo">
+                <tr>
+                        <td><xsl:value-of select="@id"/></td>
+                        <td><xsl:value-of select="nombre"/></td>
+                        <td><xsl:value-of select="grado"/></td>
+                        <td><xsl:value-of select="decretoTitulo/@año"/></td>
+                </tr>
+                </xsl:for-each>
+                </tbody>
+            </table>
+        </details>
+
+      
 
         <section>
             <h2>Contacto</h2>
