@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <xsl:output method="xml" indent="yes"/>
+
+  <!-- Match the root node -->
+  <xsl:template match="/">
+    <root>
+      <!-- Transform the ite element -->
+      <xsl:apply-templates select="ite"/>
+    </root>
+  </xsl:template>
+
+  <!-- Transform the ite element -->
+  <xsl:template match="ite">
+    <instituto nombre="{@nombre}" web="{@web}">
+      <empresa><xsl:value-of select="empresa"/></empresa>
+      <telefono><xsl:value-of select="telefono"/></telefono>
+      <personal_docente>
+        <!-- Transform the director element -->
+        <xsl:apply-templates select="director"/>
+        <!-- Transform the jefe_estudios element -->
+        <xsl:apply-templates select="jefe_estudios"/>
+        <!-- Transform the profesores elements -->
+        <xsl:apply-templates select="profesores/profesor"/>
+      </personal_docente>
+      <oferta_educativa>
+        <!-- Transform the ciclos elements -->
+        <xsl:apply-templates select="ciclos/ciclo"/>
+      </oferta_educativa>
+    </instituto>
+  </xsl:template>
+
+  <!-- Transform the director element -->
+  <xsl:template match="director">
+    <director nombre="{nombre}">
+      <despacho><xsl:value-of select="despacho"/></despacho>
+    </director>
+  </xsl:template>
+
+  <!-- Transform the jefe_estudios element -->
+  <xsl:template match="jefe_estudios">
+    <jefe_estudios nombre="{nombre}">
+      <despacho><xsl:value-of select="despacho"/></despacho>
+    </jefe_estudios>
+  </xsl:template>
+
+  <!-- Transform the profesores elements -->
+  <xsl:template match="profesor">
+    <profesor id="{id}">
+      <nombre><xsl:value-of select="nombre"/></nombre>
+    </profesor>
+  </xsl:template>
+
+  <!-- Transform the ciclos elements -->
+  <xsl:template match="ciclo">
+    <ciclo id="{@id}">
+      <nombre><xsl:value-of select="nombre"/></nombre>
+      <grado><xsl:value-of select="grado"/></grado>
+      <decretoTitulo año="{decretoTitulo/@año}"/>
+    </ciclo>
+  </xsl:template>
+
+</xsl:stylesheet>
