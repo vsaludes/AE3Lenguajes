@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <!--Copiamos el contenido del documento original-->
+  <xsl:template match="@*|node()">
+    <xsl:copy>
+      <xsl:apply-templates select="@*|node()"/>
+    </xsl:copy>
+  </xsl:template>
+
+  <!--Cambiamos el nombre ite a instituto-->
+  <xsl:template match="ite">
+    <instituto>
+      <xsl:apply-templates select="@*|node()"/>
+    </instituto>
+  </xsl:template>
+
+  <!--Pasamos a elementos los atributos nombre y web-->
+  <xsl:template match="instituto/@nombre|instituto/@web">
+    <xsl:element name="{local-name()}">
+      <xsl:value-of select="."/>
+    </xsl:element>
+  </xsl:template>
+
+  <!--Cambiamos la etiqueta empresa a nombre_empresa-->
+  <xsl:template match="empresa">
+    <nombre_empresa>
+      <xsl:apply-templates select="@*|node()"/>
+    </nombre_empresa>
+  </xsl:template>
+
+  <!--Combinamos los valores de las etiquetas nombre y despacho en información tanto para director como para jefe de estudios-->
+  <xsl:template match="director|jefe_estudios">
+    <xsl:copy>
+      <informacion>
+        <xsl:value-of select="nombre"/>
+        <xsl:text> - </xsl:text>
+        <xsl:value-of select="despacho"/>
+      </informacion>
+    </xsl:copy>
+  </xsl:template>
+
+  <!-- Convierte las etiquetas "ciclo" en elementos con atributo "id" -->
+  <xsl:template match="ciclo">
+    <xsl:element name="{local-name()}">
+      <xsl:attribute name="id">
+        <xsl:value-of select="@id"/>
+      </xsl:attribute>
+      <xsl:apply-templates select="@*|node()"/>
+    </xsl:element>
+  </xsl:template>
+
+  <!--Cambiamos el nombre de la etiqueta decretoTitulo a Titulo. Además, convertimos el atributo año a elemento anno-->
+  <xsl:template match="decretoTitulo">
+    <titulo>
+      <anno>
+        <xsl:value-of select="@año"/>
+      </anno>
+    </titulo>
+  </xsl:template>
+
+</xsl:stylesheet>

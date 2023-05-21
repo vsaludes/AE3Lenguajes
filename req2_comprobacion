@@ -1,0 +1,83 @@
+<?xml version="1.0"?><?xml-stylesheet type="text/xsl" href="xslt_edix.xsl"?>
+
+<instituto nombre="Instituto Tecnológico Edix" web="https://institutotecnologico.edix.com">
+
+              <nombre_empresa>Proeduca</nombre_empresa>
+
+              <telefono>+34 91 787 39 91</telefono>
+
+              <profesores>
+
+                            <profesor>
+
+                                          <id>1</id>
+
+                                          <nombre>Félix</nombre>
+
+                            </profesor>
+
+                            <profesor>
+
+                                          <id>2</id>
+
+                                          <nombre>Raúl</nombre>
+
+                            </profesor>
+
+                            <profesor>
+
+                                          <id>3</id>
+
+                                          <nombre>Raquel</nombre>
+
+                            </profesor>
+
+                            <profesor>
+
+                                          <id>4</id>
+
+                                          <nombre>Tomás</nombre>
+
+                            </profesor>
+
+              </profesores>
+
+              <director><informacion>Chon - Numero 31, 3ª Planta, Edificio A</informacion></director>
+
+              <jefe_estudios><informacion>Dani - Numero 27, 2ª Planta, Edificio B</informacion></jefe_estudios>
+
+              <ciclos>
+
+                            <ciclo id="ASIR">
+
+                                          <nombre>Administración de Sistemas Informáticos en Red</nombre>
+
+                                          <grado>Superior</grado>
+
+                                          <titulo><anno>2009</anno></titulo>
+
+                            </ciclo>
+
+                            <ciclo id="DAW">
+
+                                          <nombre>Desarrollo de Aplicaciones Web</nombre>
+
+                                          <grado>Superior</grado>
+
+                                          <titulo><anno>2010</anno></titulo>
+
+                            </ciclo>
+
+                            <ciclo id="DAM">
+
+                                          <nombre>Desarrollo de Aplicaciones Multiplataforma</nombre>
+
+                                          <grado>Superior</grado>
+
+                                          <titulo><anno>2010</anno></titulo>
+
+                            </ciclo>
+
+              </ciclos>
+
+</instituto>
