@@ -40,16 +40,6 @@
     </xsl:copy>
   </xsl:template>
 
-  <!-- Convierte las etiquetas "ciclo" en elementos con atributo "id" -->
-  <xsl:template match="ciclo">
-    <xsl:element name="{local-name()}">
-      <xsl:attribute name="id">
-        <xsl:value-of select="@id"/>
-      </xsl:attribute>
-      <xsl:apply-templates select="@*|node()"/>
-    </xsl:element>
-  </xsl:template>
-
   <!--Cambiamos el nombre de la etiqueta decretoTitulo a Titulo. Además, convertimos el atributo año a elemento anno-->
   <xsl:template match="decretoTitulo">
     <titulo>
